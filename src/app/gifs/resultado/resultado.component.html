@@ -1,0 +1,18 @@
+<div class="row">
+    <div *ngFor="let gif of resultado"
+        class="col-md-4 col-sm-6 animate__animated animate__fadeIn animate__slow">
+        <div class="card">
+            <img [src]="gif.images.downsized_medium.url"
+                [alt]="gif.title"
+                class="card-img-top">
+            <div class="card-body">
+                <p class="card-text">
+                    {{ gif.title }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="!resultado.length && busqueda.length">
+    <p class="sinResultado">Ups! <span style="font-weight: 100;">No se encontraron Gifs para</span> {{busqueda}} <span style="font-weight: 100;">:(</span></p>
+</div>
